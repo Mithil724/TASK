@@ -40,6 +40,8 @@ h6 {
 .content {
   display: none;
   border: 2px solid black;
+  height: 100vh;
+  background-color: blue;
 }
 
 .content{
