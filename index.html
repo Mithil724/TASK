@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <link rel="stylesheet" type="text/css" href="task.css">
+</head>
+<body>
+    <h2><p style="text-align: center">Widget Test Recipe</p></h2>
+    <h6 style="text-align: center">Scroll down to see the detail structure</h6>
+    <br>
+ 
+    <div id="button-container">
+      <button class="btn" id="btn1">Header Operations</button>
+      <button class="btn" id="btn2">General Operations</button>
+      <button class="btn" id="btn3">Work Instructions</button>
+      <button class="btn" id="btn4">Parameters</button>
+      <button class="btn" id="btn5">Equipments</button>
+      <button class="btn" id="btn6">Materials</button>
+    </div>
+
+    <div style="height: 40px;background-color: blue;margin: 20px 0;">
+      <p style="color: white;">STAGE 001<br>Attribute1,Attribute2,...</p>
+    </div>
+    <div id="content-container">
+        <div id="content1" class="content_div">
+         
+            <p class="content">This is the content for Operations</p>
+        </div>
+        <div id="content2" class="content_div">
+        
+            <p class="content">This is the content for General</p>
+        </div>
+        <div id="content3" class="content_div">
+      
+          <p class="content">This is the content for Button 3.</p>
+        </div>
+        <div id="content4" class="content_div">
+        
+            <div  class="content">
+                <div class="faq">
+                    <button class="accordion">
+                        Test Real
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ion-icon name="caret-up"></ion-icon>
+                    </button>
+                    <div class="pannel">
+                        <p>
+                            Minimum : 0.0
+                            Control Min : 0.0
+                            Value : 10.0
+                            Maximum : 0.0
+                            Default : METER
+                        </p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div id="content5" class="content_div">
+            <p class="content">This is the content for Operations</p>
+        </div>
+        <div id="content6" class="content_div">
+         
+            <p class="content">This is the content for Operations</p>
+        </div>
+    </div>
+  <script>
+        const buttons = document.querySelectorAll('#button-container button');
+        const contents = document.querySelectorAll('#content-container .content');
+
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                // contents.forEach(content => content.style.display = 'none');
+                contents[index].style.display =  window.getComputedStyle(contents[index], null).getPropertyValue("display") === 'none' ? 'block' : 'none';
+            });
+        });
+        var acc = document.getElementsByClassName("accordion");
+      var i;
+  
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          this.parentElement.classList.toggle("active");
+  
+          var pannel = this.nextElementSibling;
+  
+          if (pannel.style.display === "block") {
+            pannel.style.display = "none";
+          } else {
+            pannel.style.display = "block";
+          }
+        });
+      }
+  </script>
+</body>
+</html>

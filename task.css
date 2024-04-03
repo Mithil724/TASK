@@ -1,0 +1,82 @@
+/* Styling for h2 and h6 */
+h2,
+h6 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.btn {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  font-size: 15px;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid black;
+  outline: none;
+  transition: 0.4s;
+  width: 200px;
+  height: 20px;
+  font-weight: bold;
+}
+
+#button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: blue;
+  width: 100%;
+}
+
+#content-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-left: 3%;
+}
+.content_div {
+  width: 500px;
+}
+.content {
+  display: none;
+  border: 2px solid black;
+}
+
+.content{
+  width: 200px;
+}
+
+
+.accordion i {
+  font-size: 1.6rem;
+  margin-right: 4.3rem;
+  padding-left: 70px;
+}
+
+.active,
+.accordion:hover {
+  background-color: #f1f7f5;
+}
+.pannel {
+  padding: 0 2rem 2.5rem 2rem;
+  background-color: white;
+  overflow: hidden;
+  background-color: #f1f7f5;
+  display: none;
+  border: 2px solid black;
+}
+.pannel p {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.faq {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 10px 5;
+  width: 100%;
+  background-color: inherit;
+}
+.faq.active {
+  border: none;
+}
