@@ -1,31 +1,44 @@
-/* Styling for h2 and h6 */
+
 h2,
 h6 {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
-.btn {
-  background-color: white;
-  color: rgba(0, 0, 0, 0.8);
-  cursor: pointer;
-  font-size: 15px;
-  padding: 1rem;
-  text-align: center;
-  border: 1px solid black;
-  outline: none;
-  transition: 0.4s;
-  width: 200px;
-  height: 20px;
-  font-weight: bold;
-}
-
+  .btn {
+    background-color: white;
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    font-size: 15px;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid black;
+    outline: none;
+    transition: 0.4s;
+    width: 200px;
+    height: 40px;
+    font-weight: bold;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+  }
+  #but {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
 #button-container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: blue;
+  background-color: #034c88;
   width: 100%;
+  padding: 10px;
+}
+#text{
+margin-bottom: 20px;;
 }
 
 #content-container {
@@ -40,21 +53,19 @@ h6 {
 .content {
   display: none;
   border: 2px solid black;
-  height: 100vh;
-  background-color: blue;
+  height: 70vh;
+  background-color: #034c88;
 }
 
 .content{
   width: 200px;
 }
-
-
-.accordion i {
-  font-size: 1.6rem;
-  margin-right: 4.3rem;
-  padding-left: 70px;
+.accordion p{
+  padding-left: 3%;
+  padding: 5px;
+  width: 193px;
+  cursor: pointer;
 }
-
 .active,
 .accordion:hover {
   background-color: #f1f7f5;
@@ -63,14 +74,15 @@ h6 {
   padding: 0 2rem 2.5rem 2rem;
   background-color: white;
   overflow: hidden;
-  background-color: #f1f7f5;
+  background-color: #c0c0c0;
   display: none;
   border: 2px solid black;
+  height: 100px;
 }
 .pannel p {
   color: rgba(0, 0, 0, 0.7);
-  font-size: 1rem;
-  line-height: 1.4;
+  font-size: 15px;
+  line-height: 1;
 }
 
 .faq {
@@ -81,4 +93,20 @@ h6 {
 }
 .faq.active {
   border: none;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.fa {
+    color: black;
+    font-size: 5em;
+    cursor: pointer;
+} 
+
+@media print{
+.print-area, .print-area *{
+  display: block;
+}
 }
