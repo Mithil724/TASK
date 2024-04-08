@@ -72,17 +72,18 @@ margin-bottom: 20px;;
 }
 .pannel {
   padding: 0 2rem 2.5rem 2rem;
-  background-color: white;
   overflow: hidden;
-  background-color: #c0c0c0;
   display: none;
   border: 2px solid black;
   height: 100px;
+  background-color: #e8e6e6;
 }
 .pannel p {
   color: rgba(0, 0, 0, 0.7);
   font-size: 15px;
   line-height: 1;
+  color: #034c88;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .faq {
