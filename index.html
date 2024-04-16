@@ -235,14 +235,22 @@
         </div>
     </div>
   <script>
+   document.addEventListener('DOMContentLoaded', function() {
         const buttons = document.querySelectorAll('#button-container button');
         const contents = document.querySelectorAll('#content-container .content');
 
         buttons.forEach((button, index) => {
             button.addEventListener('click', () => {
-                contents[index].style.display =  window.getComputedStyle(contents[index], null).getPropertyValue("display") === 'none' ? 'block' : 'none';
+                const openAccordions = document.querySelectorAll('.accordion.active');
+                openAccordions.forEach(acc => {
+                    acc.classList.remove('active');
+                    acc.parentElement.classList.remove('active');
+                    acc.nextElementSibling.style.display = 'none';
+                });
+
             });
         });
+
         var acc = document.getElementsByClassName("accordion");
         var i;
 
@@ -262,8 +270,9 @@
         }
 
         function pdf() {
-    window.print();
-  } 
+            window.print();
+        } 
+    }); 
 
   </script>
 </body>
