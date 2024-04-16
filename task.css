@@ -99,6 +99,13 @@ margin-bottom: 20px;;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   print-color-adjust: exact;
+  -webkit-print-color-adjust: exact !important;
+}
+
+@page {
+  size:A4;
+  margin: 0 0 0 0;
 }
 .fa {
     color: black;
