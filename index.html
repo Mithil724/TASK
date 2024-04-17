@@ -1,281 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Task</title>
-    <link rel="stylesheet" type="text/css" href="task.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-</head>
-<body>
-    <h2><p >Widget Test Recipe</p></h2>
-    <h6 >Scroll down to see the detail structure</h6>
-    <br>
-    <div class="b-c"><button onclick="pdf()" id="but">Download</button></div>    <br>
-    <div id="button-container">
-        <button class="btn" id="btn1" onclick="toggleAccordion(this)">Header Operations<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></button>
-        <button class="btn" id="btn1" onclick="toggleAccordion(this)">General operations<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></button>
-        <button class="btn" id="btn1" onclick="toggleAccordion(this)">Work Instructions<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></button>
-        <button class="btn" id="btn1" onclick="toggleAccordion(this)">Parameters<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></button>
-        <button class="btn" id="btn1" onclick="toggleAccordion(this)">Equipments<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></button>
-        <button class="btn" id="btn1" onclick="toggleAccordion(this)">Instructions<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></button>
-    </div>
-    <div class= "nope" style="height: 40px;background-color: #034c88;margin: 20px 0;">
-      <p style="color: white;font-family: Arial; margin-left: 10px;">STAGE 001<br>Attribute1,Attribute2,...</p>
-    </div>
-    <div id="content-container">
-        <div id="content1" class="content_div">
-            <div class="content" style="background-color: #034c88;color: white;font-family: Arial, Helvetica, sans-serif;">This is the content for Operations</div>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Task</title>
+        <link rel="stylesheet" href="task.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    </head>
+    <body>
+        <h2>Widget Test Recipe</h2>
+        <h6>Scroll down to see the detail structure</h6>
+        <br />
+        <div class="b-c">
+            <button onclick="pdf()" id="but">Download</button>
         </div>
-        <div id="content2" class="content_div">
-          <p class="content" style="background-color: #034c88;color: white;font-family: Arial, Helvetica, sans-serif;">This is the content for Operations</p>
-        </div>
-        <div id="content3" class="content_div">
-          <div class="content">
-            <div class="faq">
-              <button class="accordion" style="background-color: #034c88; color: white;">
-                <p>Create Test Ins<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></p>
-              </button>
-              <div class="pannel">
-                  <p>
-                      Minimum : 0.0
-                      Control Min : 0.0
-                      Value : 10.0
-                      Maximum : 0.0
-                      Default : METER
-                  </p>
-              </div>
-          </div>
-          <div class="faq">
-            <button class="accordion" style="background-color: #034c88; color: white;">
-                <p>Create Data Plan<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></p>
+        <br />
+        <div id="button-container">
+            <button class="btn" id="btn1" onclick="toggleAccordion(this)">
+                Header Operations<i
+                    id="menu-icon"
+                    class="fas fa-caret-down"
+                ></i>
             </button>
-            <div class="pannel">
-                <p>
-                    Minimum : 0.0
-                    Control Min : 0.0
-                    Value : 10.0
-                    Maximum : 0.0
-                    Default : METER
-                </p>
+            <button class="btn" id="btn1" onclick="toggleAccordion(this)">
+                General operations<i
+                    id="menu-icon"
+                    class="fas fa-caret-down"
+                ></i>
+            </button>
+            <button class="btn" id="btn1" onclick="toggleAccordion(this)">
+                Work Instructions<i
+                    id="menu-icon"
+                    class="fas fa-caret-down"
+                ></i>
+            </button>
+            <button class="btn" id="btn1" onclick="toggleAccordion(this)">
+                Parameters<i id="menu-icon" class="fas fa-caret-down"></i>
+            </button>
+            <button class="btn" id="btn1" onclick="toggleAccordion(this)">
+                Equipments<i id="menu-icon" class="fas fa-caret-down"></i>
+            </button>
+            <button class="btn" id="btn1" onclick="toggleAccordion(this)">
+                Instructions<i id="menu-icon" class="fas fa-caret-down"></i>
+            </button>
+        </div>
+        <div class="nope">
+            <p>STAGE 001<br />Attribute1,Attribute2,...</p>
+        </div>
+        <div id="content-container">
+            <div id="content1" class="content_div">
+                <div class="content">This is the content for Operations</div>
             </div>
-        </div>
-        <div class="faq">
-          <button class="accordion" style="background-color: #034c88; color: white;">
-              <p>Create data collect cl<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></p>
-          </button>
-          <div class="pannel">
-              <p>
-                  Minimum : 0.0
-                  Control Min : 0.0
-                  Value : 10.0
-                  Maximum : 0.0
-                  Default : METER
-              </p>
-          </div>
-      </div>
-      <div class="faq">
-        <button class="accordion" style="background-color: #034c88; color: white;">
-            <p>Create alert ins<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></p>
-        </button>
-        <div class="pannel">
-            <p>
-                Minimum : 0.0
-                Control Min : 0.0
-                Value : 10.0
-                Maximum : 0.0
-                Default : METER
-            </p>
-        </div>
-    </div>
-          </div>
-        </div>
-        <div id="content4" class="content_div">
-        
-            <div  class="content">
-                <div class="faq">
-                    <button class="accordion" style="background-color: #034c88; color: white;">
-                        <p>Test Real<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></p>
-                    </button>
-                    <div class="pannel">
-                        <p>
-                            Minimum : 0.0
-                            Control Min : 0.0
-                            Value : 10.0
-                            Maximum : 0.0
-                            Default : METER
-                        </p>
+            <div id="content2" class="content_div">
+                <p class="content">This is the content for Operations</p>
+            </div>
+            <!-- More content sections here -->
+            <div id="content3" class="content_div">
+                <div class="content">
+                    <div class="faq">
+                        <button class="accordion">
+                            <p>
+                                Create Test Ins<i
+                                    id="menu-icon"
+                                    class="fas fa-caret-down"
+                                ></i>
+                            </p>
+                        </button>
+                        <div class="pannel">
+                            <p>
+                                Minimum : 0.0 Control Min : 0.0 Value : 10.0
+                                Maximum : 0.0 Default : METER
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <button class="accordion">
+                            <p>
+                                Create Data Plan<i
+                                    id="menu-icon"
+                                    class="fas fa-caret-down"
+                                ></i>
+                            </p>
+                        </button>
+                        <div class="pannel">
+                            <p>
+                                Minimum : 0.0 Control Min : 0.0 Value : 10.0
+                                Maximum : 0.0 Default : METER
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <button class="accordion">
+                            <p>
+                                Create data collect cl<i
+                                    id="menu-icon"
+                                    class="fas fa-caret-down"
+                                ></i>
+                            </p>
+                        </button>
+                        <div class="pannel">
+                            <p>
+                                Minimum : 0.0 Control Min : 0.0 Value : 10.0
+                                Maximum : 0.0 Default : METER
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <button class="accordion">
+                            <p>
+                                Create alert ins<i
+                                    id="menu-icon"
+                                    class="fas fa-caret-down"
+                                ></i>
+                            </p>
+                        </button>
+                        <div class="pannel">
+                            <p>
+                                Minimum : 0.0 Control Min : 0.0 Value : 10.0
+                                Maximum : 0.0 Default : METER
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="faq">
-                  <button class="accordion" style="background-color: #034c88; color: white;">
-                      <p>Test Integer<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></p>
-                  </button>
-                  <div class="pannel">
-                      <p>
-                          Minimum : 0.0
-                          Control Min : 0.0
-                          Value : 10.0
-                          Maximum : 0.0
-                          Default : METER
-                      </p>
-                  </div>
-              </div>
-              <div class="faq">
-                <button class="accordion" style="background-color: #034c88;color: white;">
-                    <p>Test String<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></p>
-                </button>
-                <div class="pannel">
-                    <p>
-                        Minimum : 0.0
-                        Control Min : 0.0
-                        Value : 10.0
-                        Maximum : 0.0
-                        Default : METER
-                    </p>
+            </div>
+            <div id="content4" class="content_div">
+                <div class="content">
+                    <div class="faq">
+                        <button class="accordion">
+                            <p>
+                                Test Real<i
+                                    id="menu-icon"
+                                    class="fas fa-caret-down"
+                                ></i>
+                            </p>
+                        </button>
+                        <div class="pannel">
+                            <p>
+                                Minimum : 0.0 Control Min : 0.0 Value : 10.0
+                                Maximum : 0.0 Default : METER
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <button class="accordion">
+                            <p>
+                                Test Integer<i
+                                    id="menu-icon"
+                                    class="fas fa-caret-down"
+                                ></i>
+                            </p>
+                        </button>
+                        <div class="pannel">
+                            <p>
+                                Minimum : 0.0 Control Min : 0.0 Value : 10.0
+                                Maximum : 0.0 Default : METER
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <button
+                            class="accordion"
+                            style="background-color: #034c88; color: white"
+                        >
+                            <p>
+                                Test String<i
+                                    id="menu-icon"
+                                    class="fas fa-caret-down"
+                                ></i>
+                            </p>
+                        </button>
+                        <div class="pannel">
+                            <p>
+                                Minimum : 0.0 Control Min : 0.0 Value : 10.0
+                                Maximum : 0.0 Default : METER
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            </div> 
-        </div>
-        <div id="content5" class="content_div">
-            <div class="content">
-              <div class="faq">
-                <button class="accordion" style="background-color: #034c88; color: white;">
-                    <p>Equip names<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></p>
-                </button>
-                <div class="pannel">
-                    <p>
-                        Minimum : 0.0
-                        Control Min : 0.0
-                        Value : 10.0
-                        Maximum : 0.0
-                        Default : METER
-                    </p>
+            <div id="content5" class="content_div">
+                <div class="content">
+                    <div class="faq">
+                        <button class="accordion">
+                            <p>
+                                Equip names<i
+                                    id="menu-icon"
+                                    class="fas fa-caret-down"
+                                ></i>
+                            </p>
+                        </button>
+                        <div class="pannel">
+                            <p>
+                                Minimum : 0.0 Control Min : 0.0 Value : 10.0
+                                Maximum : 0.0 Default : METER
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <button class="accordion">
+                            <p>
+                                Equip Flow<i
+                                    id="menu-icon"
+                                    class="fas fa-caret-down"
+                                ></i>
+                            </p>
+                        </button>
+                        <div class="pannel">
+                            <p>
+                                Minimum : 0.0 Control Min : 0.0 Value : 10.0
+                                Maximum : 0.0 Default : METER
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <button class="accordion">
+                            <p>
+                                Equip Trans<i
+                                    id="menu-icon"
+                                    class="fas fa-caret-down"
+                                ></i>
+                            </p>
+                        </button>
+                        <div class="pannel">
+                            <p>
+                                Minimum : 0.0 Control Min : 0.0 Value : 10.0
+                                Maximum : 0.0 Default : METER
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="faq">
-              <button class="accordion" style="background-color: #034c88; color: white;">
-                  <p>Equip Flow<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></p>
-              </button>
-              <div class="pannel">
-                  <p>
-                      Minimum : 0.0
-                      Control Min : 0.0
-                      Value : 10.0
-                      Maximum : 0.0
-                      Default : METER
-                  </p>
-              </div>
-          </div>
-          <div class="faq">
-            <button class="accordion" style="background-color: #034c88; color: white;">
-                <p>Equip Trans<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></p>
-            </button>
-            <div class="pannel">
-                <p>
-                    Minimum : 0.0
-                    Control Min : 0.0
-                    Value : 10.0
-                    Maximum : 0.0
-                    Default : METER
-                </p>
-            </div>
-        </div>
-            </div>
-        </div>
-        <div id="content6" class="content_div">
-         
-            <div class="content">
-              <div class="faq">
-                <button class="accordion" style="background-color: #034c88; color: white;">
-                    <p>Materials In<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></p>
-                </button>
-                <div class="pannel">
-                    <p>
-                        Minimum : 0.0
-                        Control Min : 0.0
-                        Value : 10.0
-                        Maximum : 0.0
-                        Default : METER
-                    </p>
+            <div id="content6" class="content_div">
+                <div class="content">
+                    <div class="faq">
+                        <button class="accordion">
+                            <p>
+                                Materials In<i
+                                    id="menu-icon"
+                                    class="fas fa-caret-down"
+                                ></i>
+                            </p>
+                        </button>
+                        <div class="pannel">
+                            <p>
+                                Minimum : 0.0 Control Min : 0.0 Value : 10.0
+                                Maximum : 0.0 Default : METER
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <button class="accordion">
+                            <p style="overflow: hidden">
+                                Materials Known<i
+                                    id="menu-icon"
+                                    class="fas fa-caret-down"
+                                ></i>
+                            </p>
+                        </button>
+                        <div class="pannel">
+                            <p>
+                                Minimum : 0.0 Control Min : 0.0 Value : 10.0
+                                Maximum : 0.0 Default : METER
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq">
+                        <button class="accordion">
+                            <p>
+                                Buying Mtrl<i
+                                    id="menu-icon"
+                                    class="fas fa-caret-down"
+                                ></i>
+                            </p>
+                        </button>
+                        <div class="pannel">
+                            <p>
+                                Minimum : 0.0 Control Min : 0.0 Value : 10.0
+                                Maximum : 0.0 Default : METER
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="faq">
-              <button class="accordion" style="background-color: #034c88; color: white;">
-                <p style="overflow: hidden;">Materials Known<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></p>
-              </button>
-              <div class="pannel">
-                  <p>
-                      Minimum : 0.0
-                      Control Min : 0.0
-                      Value : 10.0
-                      Maximum : 0.0
-                      Default : METER
-                  </p>
-              </div>
-          </div>
-          <div class="faq">
-            <button class="accordion" style="background-color: #034c88; color: white;">
-                <p>Buying Mtrl<i id="menu-icon" class="fas fa-caret-down" style="float: right;margin-right: 10px; font-size: 15px;"></i></p>
-            </button>
-            <div class="pannel">
-                <p>
-                    Minimum : 0.0
-                    Control Min : 0.0
-                    Value : 10.0
-                    Maximum : 0.0
-                    Default : METER
-                </p>
-            </div>
         </div>
-            </div>
-        </div>
-    </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const buttons = document.querySelectorAll('#button-container button');
-        const contents = document.querySelectorAll('#content-container .content');
 
-        buttons.forEach((button, index) => {
-            button.addEventListener('click', () => {
-                const buttonIndex = Array.from(button.parentNode.children).indexOf(button);
-                const openAccordions = document.querySelectorAll('#content-container .content_div:nth-child(' + (buttonIndex + 1) + ') .accordion.active');
-                openAccordions.forEach(acc => {
-                    acc.classList.remove('active');
-                    acc.parentElement.classList.remove('active');
-                    acc.nextElementSibling.style.display = 'none';
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const buttons = document.querySelectorAll('#button-container button');
+                const contents = document.querySelectorAll('#content-container .content');
+
+                buttons.forEach((button, index) => {
+                    button.addEventListener('click', () => {
+                        const buttonIndex = Array.from(button.parentNode.children).indexOf(button);
+                        const openAccordions = document.querySelectorAll('#content-container .content_div:nth-child(' + (buttonIndex + 1) + ') .accordion.active');
+                        openAccordions.forEach(acc => {
+                            acc.classList.remove('active');
+                            acc.parentElement.classList.remove('active');
+                            acc.nextElementSibling.style.display = 'none';
+                            acc.querySelector('i').classList.replace('fa-caret-up', 'fa-caret-down');
+                        });
+
+                    });
                 });
 
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function () {
+                        this.classList.toggle("active");
+                        this.parentElement.classList.toggle("active");
+
+                        var panel = this.nextElementSibling;
+
+                        if (panel.style.display === "block") {
+                            panel.style.display = "none";
+                            this.querySelector('i').classList.replace('fa-caret-up', 'fa-caret-down');
+                        } else {
+                            panel.style.display = "block"
+                            this.querySelector('i').classList.replace('fa-caret-down', 'fa-caret-up');
+                        }
+                    });
+                } 
             });
-        });
-
-        var acc = document.getElementsByClassName("accordion");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                this.parentElement.classList.toggle("active");
-
-                var panel = this.nextElementSibling;
-
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "block";
-                }
-            });
-        }
-
-        
-        
-    });
-    function pdf() {
-            window.print();
-        } 
-
-
-  </script>
-</body>
+            function pdf() {
+                window.print();
+            }
+        </script>
+    </body>
 </html>
