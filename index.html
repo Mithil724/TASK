@@ -57,7 +57,6 @@
             <div id="content2" class="content_div">
                 <p class="content">This is the content for Operations</p>
             </div>
-            <!-- More content sections here -->
             <div id="content3" class="content_div">
                 <div class="content">
                     <div class="faq">
@@ -290,42 +289,85 @@
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const buttons = document.querySelectorAll('#button-container button');
-                const contents = document.querySelectorAll('#content-container .content');
-
+        
                 buttons.forEach((button, index) => {
                     button.addEventListener('click', () => {
-                        const buttonIndex = Array.from(button.parentNode.children).indexOf(button);
-                        const openAccordions = document.querySelectorAll('#content-container .content_div:nth-child(' + (buttonIndex + 1) + ') .accordion.active');
-                        openAccordions.forEach(acc => {
-                            acc.classList.remove('active');
-                            acc.parentElement.classList.remove('active');
-                            acc.nextElementSibling.style.display = 'none';
-                            acc.querySelector('i').classList.replace('fa-caret-up', 'fa-caret-down');
-                        });
-
+                        toggleAccordion(button, index);
                     });
                 });
-
+        
                 var acc = document.getElementsByClassName("accordion");
                 var i;
-
+        
                 for (i = 0; i < acc.length; i++) {
                     acc[i].addEventListener("click", function () {
                         this.classList.toggle("active");
                         this.parentElement.classList.toggle("active");
-
+        
                         var panel = this.nextElementSibling;
-
+        
                         if (panel.style.display === "block") {
                             panel.style.display = "none";
                             this.querySelector('i').classList.replace('fa-caret-up', 'fa-caret-down');
                         } else {
-                            panel.style.display = "block"
+                            panel.style.display = "block";
                             this.querySelector('i').classList.replace('fa-caret-down', 'fa-caret-up');
                         }
                     });
+        
+                    var panel = acc[i].nextElementSibling;
+                    panel.style.display = "block";
+                    acc[i].classList.add('active');
+                    acc[i].parentElement.classList.add('active');
+                    acc[i].querySelector('i').classList.replace('fa-caret-down', 'fa-caret-up');
                 } 
             });
+            function toggleAccordion(button, index) {
+                const contentDiv = document.querySelector('#content-container').children[index];
+                const panels = contentDiv.querySelectorAll('.pannel');
+
+                const isVisible = panels[0].style.display === 'block';
+
+                panels.forEach(panel => {
+                    if (isVisible) {
+                        panel.style.display = 'none';
+                    } else {
+                        panel.style.display = 'block';
+                    }
+                });
+
+                const isActive = !isVisible;
+                if (!isActive) {
+                    button.classList.remove('active');
+                    button.querySelector('.accordion').classList.remove('active');
+                    button.querySelector('i').classList.replace('fa-caret-down', 'fa-caret-up');
+                } else {
+                    button.classList.add('active');
+                    button.querySelector('.accordion').classList.add('active');
+                    button.querySelector('i').classList.replace('fa-caret-up', 'fa-caret-down');
+                }
+
+                
+            }
+            function toggleAccordion(button, index) {
+            const contentDiv = document.querySelector('#content-container').children[index];
+            const panels = contentDiv.querySelectorAll('.pannel');
+            const isVisible = panels[0].style.display === 'block';
+            panels.forEach(panel => {
+                if (isVisible) {
+                    panel.style.display = 'none';
+                } else {
+                    panel.style.display = 'block';
+                }
+            });
+            const icon = button.querySelector('i');
+                if (isVisible) {
+                    icon.classList.replace('fa-caret-up', 'fa-caret-down');
+                } else {
+                    icon.classList.replace('fa-caret-down', 'fa-caret-up');
+                }
+            }
+
             function pdf() {
                 window.print();
             }
